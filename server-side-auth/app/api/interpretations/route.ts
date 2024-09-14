@@ -1,4 +1,4 @@
-import client from "@/app/lib/appwrite_client";
+import { client } from "@/app/lib/appwrite_client";
 import { Databases, ID, Query } from "node-appwrite"
 import { NextResponse } from "next/server"
 
