@@ -3,6 +3,7 @@ import { createAdminClient, getLoggedInUser } from "@/app/lib/server/appwrite";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { SESSION_COOKIE } from "@/app/lib/server/const";
+import Link from "next/link";
 
 async function signInWithEmail(formData: FormData) {
   "use server";
@@ -36,8 +37,8 @@ export default async function SignInPage() {
   if (user) redirect("/account");
 
   return (
-    <div className="u-max-width-500 u-width-full-line">
-      <h1 className="heading-level-2 u-margin-block-start-auto">
+    <div className="mx-auto max-w-2xl mt-10">
+      <h1 className="heading-level-2 text-center font-semibold text-3xl">
         Demo sign in
       </h1>
       <div className="u-margin-block-start-24">
@@ -49,14 +50,14 @@ export default async function SignInPage() {
             <li className="form-item">
               <p>
                 This is a demo project for{" "}
-                <a href="https://appwrite.io">Appwrite</a> server side
+                <Link className="text-indigo-400" href="https://appwrite.io">Appwrite</Link> server side
                 rendering. View the source code on the{" "}
-                <a
-                  className="link"
+                <Link
+                  className="text-indigo-400"
                   href="https://github.com/appwrite/demos-for-svelte"
                 >
                   GitHub repository
-                </a>
+                </Link>
                 .
               </p>
             </li>
@@ -70,7 +71,7 @@ export default async function SignInPage() {
                   name="email"
                   placeholder="Email"
                   type="email"
-                  className="input-text"
+                  className="outline outline-1 rounded-lg p-1"
                   autoComplete="off"
                 />
               </div>
@@ -89,7 +90,7 @@ export default async function SignInPage() {
                   placeholder="Password"
                   minLength={8}
                   type="password"
-                  className="input-text"
+                  className="outline outline-1 rounded-lg p-1"
                   autoComplete="off"
                 />
                 <button
@@ -102,7 +103,7 @@ export default async function SignInPage() {
               </div>
             </li>
             <li className="form-item">
-              <button className="button is-full-width" type="submit">
+              <button className="button is-full-width bg-indigo-700 text-white p-2 rounded-xl my-3" type="submit">
                 Sign in
               </button>
             </li>
@@ -121,9 +122,9 @@ export default async function SignInPage() {
         <li className="inline-links-item">
           <span className="text">
             Don&#39;t have an account?{" "}
-            <a className="link" href="/signup">
+            <Link className="text-indigo-400" href="/signup">
               Sign up
-            </a>
+            </Link>
           </span>
         </li>
       </ul>
