@@ -44,7 +44,7 @@ export default function DisplayData() {
                     <h3>{item.title}</h3>
                     <p>{item.description}</p>
                     <a href={item?.imageUrl} target="_blank">{item.imageUrl}</a>
-                    <img src={item.imageUrl} alt={item.title} />
+                    <img width={200} height={200} src={item.imageUrl} alt={item.title} />
                 </div>
             ))}
         </div>
