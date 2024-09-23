@@ -19,6 +19,7 @@ import {
   }
   
   
+
   export default function HomePage() {
     const [user, setUser] = useState<any>();
     const [interpretations, setInterpretations] = useState<IInterpretation[]>([]);
